@@ -4,6 +4,7 @@ module Prpr
       class Comment < Prpr::Action::Base
         def call
           if count == 1
+            remove_label label(:over_2)
             add_label label(:one)
           elsif count >= 2
             unless already_labeled?(label(:over_2))
